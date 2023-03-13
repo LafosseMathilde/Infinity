@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données
-$conn = new mysqli("localhost", "utilisateur", "motdepasse", "ma_base_de_donnees");
+$conn = new mysqli("localhost", "root", "root", "cra");
 
 // Vérification de la connexion
 if ($conn->connect_error) {
@@ -12,7 +12,7 @@ $nom = $_POST["nom"];
 $prenom = $_POST["prenom"];
 $email = $_POST["email"];
 $evenement = $_POST["evenement"];
-$client = $_POST["client"];
+//$Client = $_POST["Client"];
 $date = $_POST["date"];
 
 // Préparation de la requête SQL
@@ -21,7 +21,7 @@ $conn->query($sql);
 
 $utilisateur_id = $conn->insert_id;
 
-$sql = "INSERT INTO Evenement (Télétravail, Présentiel, Client, Date) VALUES ('$evenement' = 'Télétravail', '$evenement' = 'Présentiel', '$client', '$date')";
+$sql = "INSERT INTO Evenement (Télétravail, Présentiel, Client, Date) VALUES ('$evenement' = 'Télétravail', '$evenement' = 'Présentiel', '$date')";
 $conn->query($sql);
 
 $evenement_id = $conn->insert_id;
@@ -31,7 +31,5 @@ $conn->query($sql);
 
 $conn->close();
 
-// Redirection vers une page de confirmation
-header("Location: confirmation.php");
-exit();
+
 ?>
