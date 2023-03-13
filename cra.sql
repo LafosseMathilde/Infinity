@@ -3,6 +3,7 @@ CREATE TABLE Utilisateur(
     Nom VARCHAR(255) NOT NULL,
     Prenom VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL UNIQUE,
+    Date DATETIME NOT NULL
 );
 
 CREATE TABLE Evenement(
@@ -10,4 +11,5 @@ CREATE TABLE Evenement(
     Télétravail VARCHAR(255) NOT NULL,
     Présentiel VARCHAR(255) NOT NULL,
     Client VARCHAR(255) NOT NULL UNIQUE,
+    Date DATETIME NOT NULL
 );
