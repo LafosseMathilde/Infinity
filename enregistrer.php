@@ -1,35 +1,29 @@
 <?php
 // Connexion à la base de données
-$conn = new mysqli("localhost", "root", "root", "cra");
+$serveur = "localhost";
+$utilisateur = "root";
+$mot_de_passe = "root";
+$nom_base_de_donnees = "cra";
+$connexion = new mysqli($serveur, $utilisateur, $mot_de_passe, $nom_base_de_donnees);
 
 // Vérification de la connexion
-if ($conn->connect_error) {
-    die("La connexion a échoué: " . $conn->connect_error);
+if ($connexion->connect_error) {
+    die("La connexion a échoué : " . $connexion->connect_error);
 }
 
-// Récupération des données du formulaire
-$nom = $_POST["nom"];
-$prenom = $_POST["prenom"];
-$email = $_POST["email"];
-$evenement = $_POST["evenement"];
-//$Client = $_POST["Client"];
-$date = $_POST["date"];
+// Récupération des données envoyées par le formulaire
+$date = $_POST['date'];
+$am = $_POST['am'];
+$pm = $_POST['pm'];
 
-// Préparation de la requête SQL
-$sql = "INSERT INTO Utilisateur (Nom, Prenom, Email, Date) VALUES ('$nom', '$prenom', '$email', NOW())";
-$conn->query($sql);
+// Insertion d'une nouvelle ligne dans la table DayType
+$insertion = "INSERT INTO DayType (Date, AM, PM) VALUES ('$date', '$am', '$pm')";
+if ($connexion->query($insertion) === TRUE) {
+    echo "Nouvelle ligne insérée avec succès";
+} else {
+    echo "Erreur lors de l'insertion : " . $connexion->error;
+}
 
-$utilisateur_id = $conn->insert_id;
-
-$sql = "INSERT INTO Evenement (Télétravail, Présentiel, Client, Date) VALUES ('$evenement' = 'Télétravail', '$evenement' = 'Présentiel', '$date')";
-$conn->query($sql);
-
-$evenement_id = $conn->insert_id;
-
-$sql = "INSERT INTO Inscription (Id_utilisateur, Id_evenement) VALUES ($utilisateur_id, $evenement_id)";
-$conn->query($sql);
-
-$conn->close();
-
-
+// Fermeture de la connexion à la base de données
+$connexion->close();
 ?>
