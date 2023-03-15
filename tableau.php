@@ -17,7 +17,7 @@ $result_daytype = mysqli_query($conn, $sql_daytype);
 
 // Affichage des données dans un tableau
 echo "<table>";
-echo "<tr><th>Id</th><th>Nom</th><th>Prénom</th><th>Email</th><th>Date</th><th>AM</th><th>PM</th></tr>";
+echo "<tr><th>Id</th><th>Nom</th><th>Prenom</th><th>Email</th><th>Date</th><th>AM</th><th>PM</th></tr>";
 while ($row = mysqli_fetch_assoc($result_daytype)) {
     echo "<tr><td>" . $row["Id"] . "</td><td>" . $row["Nom"] . "</td><td>" . $row["Prenom"] . "</td><td>" . $row["Email"] . "</td><td>" . $row["date"] . "</td><td>" . $row["AM"] . "</td><td>" . $row["PM"] . "</td></tr>";
 }
