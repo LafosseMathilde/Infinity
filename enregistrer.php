@@ -15,9 +15,12 @@ if ($connexion->connect_error) {
 $date = $_POST['date'];
 $am = $_POST['am'];
 $pm = $_POST['pm'];
+$nom = $_POST['nom'];
+$prenom = $_POST['prenom'];
+$email = $_POST['email'];
 
 // Insertion d'une nouvelle ligne dans la table DayType
-$insertion = "INSERT INTO DayType (Date, AM, PM) VALUES ('$date', '$am', '$pm')";
+$insertion = "INSERT INTO DayType (date, AM, PM, nom, prenom, email) VALUES ('$date', '$am', '$pm', '$nom', '$prenom', '$email')";
 if ($connexion->query($insertion) === TRUE) {
     echo "Nouvelle ligne insérée avec succès";
 } else {
