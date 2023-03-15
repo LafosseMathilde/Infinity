@@ -30,5 +30,6 @@ mysqli_close($conn);
 <html>
     <body>
         <a href="index.html">Formulaire</a>
+        <link rel="stylesheet" href="tableau.css">
     </body>
 </html>
