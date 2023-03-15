@@ -29,4 +29,7 @@ if ($connexion->query($insertion) === TRUE) {
 
 // Fermeture de la connexion à la base de données
 $connexion->close();
+
+header("Location: tableau.php");
+exit();
 ?>
