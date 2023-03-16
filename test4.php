@@ -49,15 +49,19 @@ if (isset($_POST['enregistrer'])) {
                     <?php foreach ($demi_journees as $demi_journee): ?>
                         <td>
                             <select name="donnees">
-                                <option value=""></option>
-                                <option value="Donnée 1">Donnée 1</option>
-                                <option value="Donnée 2">Donnée 2</option>
-                                <option value="Donnée 3">Donnée 3</option>
+                                <option value="Teletravail">Teletravail</option>
+                                <option value="Conges">Conges</option>
+                                <option value="Maladie">Maladie</option>
+                                <option value="Formation">Formation</option>
+                                <option value="RTT">RTT</option>
+                                <option value="SurSite">Sur Site</option>
                             </select>
                             <input type="hidden" name="jour" value="<?php echo $index; ?>">
                             <input type="hidden" name="demi_journee" value="<?php echo $demi_journee; ?>">
                             <input type="submit" name="enregistrer" value="Enregistrer">
-                            <?php echo $calendrier[$index][1][$demi_journee]; ?>
+                            <?php if(isset($calendrier[$index][1][$demi_journee])): ?>
+                                <?php echo $calendrier[$index][1][$demi_journee]; ?>
+                            <?php endif; ?>
                         </td>
                     <?php endforeach; ?>
                 </tr>
