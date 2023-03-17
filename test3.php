@@ -29,11 +29,24 @@ for ($week = 1; $week <= ceil(($numDays + $firstDay - 1) / 7); $week++) {
         // Si le numéro de jour est compris entre 1 et le nombre de jours dans le mois, on affiche le jour
         if ($numDay >= 1 && $numDay <= $numDays) {
             echo '<td>';
-            echo '<select name="data[' . $year . '-' . $month . '-' . $numDay . ']">';
-            echo '<option value=""></option>';
-            echo '<option value="option1">Option 1</option>';
-            echo '<option value="option2">Option 2</option>';
-            echo '<option value="option3">Option 3</option>';
+            echo '<select name="data[' . $year . '-' . $month . '-' . $numDay . '_matin]">';
+            echo '<option value="AM">AM</option>';
+            echo '<option value="Conges">Conges</option>';
+            echo '<option value="Maladie">Maladie</option>';
+            echo '<option value="Teletravail">Teletravail</option>';
+            echo '<option value="Formation">Formation</option>';
+            echo '<option value="RTT">RTT</option>';
+            echo '<option value="SurSite">Sur Site</option>';
+            echo '</select>';
+            echo '<br>';
+            echo '<select name="data[' . $year . '-' . $month . '-' . $numDay . '_apresmidi]">';
+            echo '<option value="PM">PM</option>';
+            echo '<option value="Conges">Conges</option>';
+            echo '<option value="Maladie">Maladie</option>';
+            echo '<option value="Teletravail">Teletravail</option>';
+            echo '<option value="Formation">Formation</option>';
+            echo '<option value="RTT">RTT</option>';
+            echo '<option value="SurSite">Sur Site</option>';
             echo '</select>';
             echo '<br>';
             echo $numDay;
