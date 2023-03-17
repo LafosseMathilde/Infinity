@@ -13,6 +13,9 @@ $numDays = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 // Jour de la semaine du premier jour du mois
 $firstDay = date('N', strtotime($year . '-' . $month . '-01'));
 
+// Affichage du mois et de l'année
+echo '<h1>' . date('F Y', strtotime($year . '-' . $month . '-01')) . '</h1>';
+
 // Création du tableau HTML
 echo '<table>';
 echo '<tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr>';
