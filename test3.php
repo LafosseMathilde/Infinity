@@ -77,17 +77,4 @@ echo '</tr>';
 }
 
 echo '</table>';
-
-// Boutons pour afficher le mois suivant ou précédent
-echo '<form method="get">';
-echo '<input type="hidden" name="year" value="' . $year . '">';
-echo '<input type="hidden" name="month" value="' . ($month - 1) . '">';
-echo '<input type="submit" value="Mois précédent">';
-echo '</form>';
-
-echo '<form method="get">';
-echo '<input type="hidden" name="year" value="' . $year . '">';
-echo '<input type="hidden" name="month" value="' . ($month + 1) . '">';
-echo '<input type="submit" value="Mois suivant">';
-echo '</form>';
 ?>
