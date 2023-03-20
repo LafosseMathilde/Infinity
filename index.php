@@ -69,11 +69,13 @@ echo '</td>';
 } else {
 echo '<td></td>';
 }
-
+// Si on est arrivé au dernier jour de la semaine, on ferme la ligne du tableau
+if ($day == 7) {
+echo '</tr>';
+}
 // Fin de la boucle pour chaque jour de la semaine
 }
-
-echo '</tr>';
+// Fin de la boucle pour chaque semaine
 }
 
 echo '</table>';
