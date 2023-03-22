@@ -17,3 +17,10 @@ CREATE TABLE Journee(
     Matin BOOL NOT NULL DEFAULT 0,
     ApresMidi BOOL NOT NULL DEFAULT 0
 );
+
+CREATE TABLE Users (
+  Id int(11) NOT NULL AUTO_INCREMENT,
+  Username varchar(255) NOT NULL,
+  Password varchar(255) NOT NULL,
+  PRIMARY KEY (Id)
+);
