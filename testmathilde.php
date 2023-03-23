@@ -45,7 +45,7 @@ for ($week = 1; $week <= ceil(($numDays + $firstDay - 1) / 7); $week++) {
         if ($numDay >= 1 && $numDay <= $numDays) {
             echo '<td>';
 echo '<select name="data[' . $year . '-' . $month . '-' . $numDay . '_matin]">';
-echo '<option value="" disabled selected>AM</option>';
+echo '<option value="" disabled selected>Sur Site</option>';
 echo '<option value="Conges">Conges</option>';
 echo '<option value="Maladie">Maladie</option>';
 echo '<option value="Teletravail">Teletravail</option>';
@@ -55,7 +55,7 @@ echo '<option value="SurSite">Sur Site</option>';
 echo '</select>';
 echo '<br>';
 echo '<select name="data[' . $year . '-' . $month . '-' . $numDay . '_apresmidi]">';
-echo '<option value="" disabled selected>PM</option>';
+echo '<option value="" disabled selected>Sur Site</option>';
 echo '<option value="Conges">Conges</option>';
 echo '<option value="Maladie">Maladie</option>';
 echo '<option value="Teletravail">Teletravail</option>';
