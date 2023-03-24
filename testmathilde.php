@@ -80,8 +80,32 @@ echo '</tr>';
 
 echo '</table>';
 
+
 // Ajout d'un bouton de soumission pour envoyer uniquement les cases remplies
-echo '<form method="POST" action="traitement.php">';
 echo '<input type="submit" value="Envoyer">';
 echo '</form>';
+
+// Vérification de la connexion
+$conn = new mysqli("localhost", "root", "root", "cra");
+if ($conn->connect_error) {
+    die("Connexion échouée: " . $conn->connect_error);
+}
+
+// Récupération des données envoyées via le formulaire
+if(isset($_POST['data'])) {
+    $data = $_POST['data'];
+
+    // Boucle pour insérer chaque ligne dans la base de données
+    foreach ($data as $date => $values) {
+        $matin = $values['_matin'];
+        $apresmidi = $values['_apresmidi'];
+          // Insère les données de connexion dans la base de données
+        $sql = "INSERT INTO statut (Conges, Maladie, Teletravail, Formation, RTT, SurSite) VALUES ('$Conges', '$Maladie', '$Teletravail', '$Formation', '$RTT', '$SurSite')";
+         mysqli_query($conn, $sql);
+        }
+    }
+
+    // Fermeture de la connexion
+    $conn->close();
+
 ?>
